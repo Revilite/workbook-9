@@ -17,6 +17,9 @@ public class NorthwindTradersSpringBootApplication implements CommandLineRunner 
     @Autowired
     SimpleProductDao spd;
 
+    @Autowired
+    private ProductDao prodDao;
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -29,6 +32,9 @@ public class NorthwindTradersSpringBootApplication implements CommandLineRunner 
         int userChoice = scan.nextInt();
         scan.nextLine();
 
+        spd.add(new Product());
+
+        spd.getAll();
 
     }
 }

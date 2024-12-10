@@ -8,17 +8,18 @@ import java.util.List;
 public class SimpleProductDao implements ProductDao {
     private List<Product> employees;
 
+
     public SimpleProductDao(List<Product> employees) {
         this.employees = employees;
     }
 
     @Override
     public void add(Product product) {
-
+        employees.add(product);
     }
 
     @Override
     public List<Product> getAll() {
-        return List.of();
+        return employees;
     }
 }
