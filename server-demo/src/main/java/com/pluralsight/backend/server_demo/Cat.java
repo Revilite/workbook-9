@@ -8,4 +8,18 @@ public class Cat {
         this.name = name;
         this.catchPhrase = catchPhrase;
     }
+
+    //Needed to make a bean
+    public Cat() {
+
+    }
+
+    //Neaded to make a bean
+    public String getName() {
+        return name;
+    }
+
+    public String getCatchPhrase() {
+        return catchPhrase;
+    }
 }
