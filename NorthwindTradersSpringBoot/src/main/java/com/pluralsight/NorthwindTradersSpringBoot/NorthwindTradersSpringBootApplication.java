@@ -15,14 +15,11 @@ public class NorthwindTradersSpringBootApplication implements CommandLineRunner 
     }
 
     @Autowired
-    SimpleProductDao spd;
-
-    @Autowired
-    private ProductDao prodDao;
+    JdbcProductDao productDB;
 
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Scanner scan = new Scanner(System.in);
 
         System.out.printf("""
@@ -31,10 +28,17 @@ public class NorthwindTradersSpringBootApplication implements CommandLineRunner 
                 """);
         int userChoice = scan.nextInt();
         scan.nextLine();
+        switch (userChoice) {
+            case 1 -> displaytList();
 
-        spd.add(new Product());
+        }
+    }
 
-        spd.getAll();
-
+    public void displaytList(){
+        for(Product product : productDB.getAll()){
+            System.out.printf("""
+                    ProductID: %d, Product Name: %s, Product Price: %.2f
+                    """, product.getProductId(), product.getName(), product.getPrice());
+        }
     }
 }
