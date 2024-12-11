@@ -7,12 +7,18 @@ import com.pluralsight.dealership.model.vehicle.Vehicle;
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
 import com.pluralsight.dealership.view.JavaHelpers.ColorCodes;
 import com.pluralsight.dealership.model.contract.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 
 import javax.sql.DataSource;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Scanner;
+
+
 
 public class UserInterface {
     private VehicleDAOMysqlImpl vehicleDB;
@@ -24,6 +30,7 @@ public class UserInterface {
         this.salesContractDB = new SalesContractDAOMysqlImpl(dataSource);
         this.leaseContractDB = new LeaseContractDAOMysqlImpl(dataSource);
     }
+
 
     public void display() {
         Scanner scan = new Scanner(System.in);
