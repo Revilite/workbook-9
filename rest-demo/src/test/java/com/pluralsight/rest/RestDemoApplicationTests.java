@@ -1,10 +1,10 @@
-package com.pluralsight.dealership;
+package com.pluralsight.rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DealershipApplicationTests {
+class RestDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
